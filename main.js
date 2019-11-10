@@ -9,7 +9,7 @@ $(document).ready(function() {
     $(".top-nav").removeClass("open");
   });
 
-  $('.top-nav a[href*="#"]').on("click", function() {
+  $('nav a[href*="#"]').on("click", function() {
     $("html, body").animate(
       {
         scrollTop: $($(this).attr("href")).offset().top - 100
@@ -25,5 +25,11 @@ $(document).ready(function() {
       },
       2000
     );
+  });
+
+  AOS.init({
+    easing: "ease",
+    duration: 1800,
+    once: true
   });
 });
