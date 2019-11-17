@@ -33,3 +33,22 @@ $(document).ready(function() {
     once: true
   });
 });
+
+$('[type="submit"]').on("click", function() {
+  // this adds 'required' class to all the required inputs under the same <form> as the submit button
+  $(this)
+    .closest("form")
+    .find("[required]")
+    .addClass("required");
+});
+
+document.addEventListener(
+  "invalid",
+  (function() {
+    return function(e) {
+      e.preventDefault();
+      document.getElementById("name").focus();
+    };
+  })(),
+  true
+);

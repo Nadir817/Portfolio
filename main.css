@@ -393,6 +393,17 @@ input[type="submit"]:hover {
   color: #221e3f;
   background-color: #ffe838;
 }
+
+input.required:invalid,
+textarea.required:invalid {
+  box-shadow: 0 0 10px 5px lightskyblue;
+}
+
+input:focus:invalid,
+textarea:focus:invalid {
+  box-shadow: none;
+}
+
 /*End contact*/
 
 /*Start footer*/
