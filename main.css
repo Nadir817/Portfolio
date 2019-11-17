@@ -367,13 +367,15 @@ form {
 
 form label {
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 input,
 textarea {
   width: 100%;
   padding: 1rem;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: none;
   outline-color: greenyellow;
 }
@@ -391,14 +393,22 @@ input[type="submit"] {
 input[type="submit"]:hover {
   color: #221e3f;
   background-color: #ffe838;
+  transform: scale(1.1);
+}
+
+input[type="submit"]:focus {
+  outline: none;
 }
 
 .wrong-input {
-  box-shadow: 0 0 10px 5px lightskyblue;
+  box-shadow: 0 0 7px 3px rgb(0, 157, 255);
+  background: rgb(250, 207, 190);
 }
 
 p.error {
-  color: purple;
+  color: rgb(3, 248, 3);
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /* input:invalid,

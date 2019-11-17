@@ -55,11 +55,20 @@ $(document).ready(function() {
 
 function validateForm() {
   let name = document.getElementById("name");
+  let subject = document.getElementById("subject");
   let valid = true;
   removeMessage();
-  if (name.value.length === 0) {
+  if (name.value.length === 0 || name.value !== /\w/) {
     name.className = "wrong-input";
-    name.nextElementSibling.innerHTML = "Name can not be empty.";
+    name.nextElementSibling.innerHTML =
+      "Name should not be empty or include any number";
+    valid = false;
+  }
+
+  if (subject.value.length < 10 || subject.value.length > 400) {
+    subject.className = "wrong-input";
+    subject.nextElementSibling.innerHTML =
+      "The message should be at least 10 letters";
     valid = false;
   }
 
