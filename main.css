@@ -370,7 +370,6 @@ form label {
 }
 
 input,
-select,
 textarea {
   width: 100%;
   padding: 1rem;
@@ -394,15 +393,22 @@ input[type="submit"]:hover {
   background-color: #ffe838;
 }
 
-input.required:invalid,
-textarea.required:invalid {
+.wrong-input {
   box-shadow: 0 0 10px 5px lightskyblue;
 }
 
-input:focus:invalid,
-textarea:focus:invalid {
-  box-shadow: none;
+p.error {
+  color: purple;
 }
+
+/* input:invalid,
+textarea:invalid {
+  box-shadow: 0 0 10px 5px lightskyblue;
+} */
+
+/* .on-focus {
+  box-shadow: none;
+} */
 
 /*End contact*/
 

@@ -34,21 +34,55 @@ $(document).ready(function() {
   });
 });
 
-$('[type="submit"]').on("click", function() {
-  // this adds 'required' class to all the required inputs under the same <form> as the submit button
-  $(this)
-    .closest("form")
-    .find("[required]")
-    .addClass("required");
-});
+// $('[type="submit"]').on("click", function() {
+//   // this adds 'required' class to all the required inputs under the same <form> as the submit button
+//   $(this)
+//     .closest("form")
+//     .find("[required]")
+//     .addClass("required");
+// });
 
-document.addEventListener(
-  "invalid",
-  (function() {
-    return function(e) {
-      e.preventDefault();
-      document.getElementById("name").focus();
-    };
-  })(),
-  true
-);
+// document.addEventListener(
+//   "invalid",
+//   (function() {
+//     return function(e) {
+//       e.preventDefault();
+//       document.getElementById("name").focus();
+//     };
+//   })(),
+//   true
+// );
+
+function validateForm() {
+  let name = document.getElementById("name");
+  let valid = true;
+  removeMessage();
+  if (name.value.length === 0) {
+    name.className = "wrong-input";
+    name.nextElementSibling.innerHTML = "Name can not be empty.";
+    valid = false;
+  }
+
+  if (
+    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.email.value)
+  ) {
+    return valid;
+  } else {
+    email.className = "wrong-input";
+    email.nextElementSibling.innerHTML = "Please Enter a Valid Email.";
+    valid = false;
+  }
+  return valid;
+}
+
+function removeMessage() {
+  let errorInput = document.querySelectorAll(".wrong-input");
+  [].forEach.call(errorInput, function(el) {
+    el.classList.remove("wrong-input");
+  });
+
+  let errorP = document.querySelectorAll(".error");
+  [].forEach.call(errorP, function(el) {
+    el.innerHTML = "";
+  });
+}

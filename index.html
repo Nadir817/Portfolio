@@ -222,38 +222,27 @@
           data-aos="fade-up"
           data-aos-delay="300"
           method="POST"
+          onsubmit="return validateForm()"
+          novalidate
         >
           <label for="name">Name:</label>
           <input
             type="text"
             name="name"
+            id="name"
             placeholder="Enter your name..."
-            pattern="\D+"
-            required
-            oninvalid="this.setCustomValidity('Please Enter a Valid Name')"
-            oninput="this.setCustomValidity('')"
           />
-
+          <p class="error"></p>
           <label for="email">Email:</label>
           <input
             type="email"
             id="email"
             name="email"
             placeholder="Enter your Emaill..."
-            required
-            oninvalid="this.setCustomValidity('Please Enter a Valid Email')"
-            oninput="this.setCustomValidity('')"
           />
+          <p class="error"></p>
           <label for="subject">Subject:</label>
-          <textarea
-            name="subject"
-            id="subject"
-            cols="10"
-            rows="10"
-            required
-            maxlength="300"
-            minlength="10"
-          ></textarea>
+          <textarea name="subject" id="subject" cols="10" rows="10"></textarea>
           <input type="submit" value="Submit" />
         </form>
       </div>
