@@ -57,8 +57,9 @@ function validateForm() {
   let name = document.getElementById("name");
   let subject = document.getElementById("subject");
   let valid = true;
+  let regName = /^[a-zA-Z]/;
   removeMessage();
-  if (name.value.length === 0 || name.value !== /\w/) {
+  if (name.value.length === 0 || !regName.test(name.value)) {
     name.className = "wrong-input";
     name.nextElementSibling.innerHTML =
       "Name should not be empty or include any number";
