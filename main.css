@@ -354,6 +354,15 @@ li {
 .portfolio-description .cta:hover {
   color: #2f67cd;
 }
+
+img.projectImg {
+  transition: 650ms;
+}
+
+img.projectImg:hover {
+  transform: scale(1.05);
+}
+
 /*End services*/
 
 /*Start timeline*/
