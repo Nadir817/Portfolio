@@ -303,6 +303,20 @@ li {
   transform: rotate(-45deg);
 }
 
+.skill-description i {
+  margin-right: 35px;
+  font-size: 2rem;
+}
+
+.skill-description :first-child {
+  margin-left: 0px;
+}
+
+.skill-description2 .iconify {
+  margin-right: 30px;
+  font-size: 2rem;
+}
+
 /*End services*/
 
 /*Start portfolio*/
